@@ -1,0 +1,81 @@
+.my-flute {
+    height: 60px;
+    background-color: #ffbd59;
+}
+
+.my-row {
+    height: 100%;
+}
+
+.img {
+    width: 50%;
+    height: 60px;
+
+}
+
+.text-center {
+    text-align: center;
+}
+
+.row-1 {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.h5 {
+    font-size: 1.0rem;
+}
+
+.box1 {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    background-color: #ffbd59;
+    justify-content: space-around;
+}
+
+.box-2 {
+
+    font-weight: bold;
+    width: 40%;
+
+
+}
+
+.box3 {
+
+    width: 70%;
+    margin-bottom: 0;
+
+}
+
+.table {
+    font-weight: lighter;
+    border-collapse: collapse
+}
+
+.box-4 {
+    background-color: #ffbd59;
+    width: 50%;
+}
+
+.box-5 {
+    background-color: #ffbd59;
+}
+
+.center-box {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 150px
+}
+
+.center-box1 {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 60px
+}
