@@ -1,0 +1,160 @@
+/* Source: https://codepen.io/joshbader/pen/LYYdGdB */
+
+.note {
+    font-size: calc(0.5vw + 0.75rem);
+    text-align: center;
+    opacity: 0.5;
+}
+
+.calendar-wrap {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    background-color: #fff;
+    user-select: none;
+    border: 2px solid #5D626E;
+}
+
+.month-year {
+    font-family: 'Roboto';
+    font-size: 1rem;
+    line-height: 3rem;
+    font-weight: bold;
+    color: #5D626E;
+    text-align: center;
+    border-bottom: 1px solid #5D626E;
+    margin-top: auto;   
+}
+
+.calendar {
+    table-layout: fixed;
+    margin-bottom: 0.75em;
+    overflow: hidden;
+    border-collapse: collapse;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.day-title {
+    width: 4rem;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+    color: #5D626E;
+}
+
+.day {
+    position: relative;
+    height: 2em;
+}
+
+.day:focus {
+    outline: none;
+}
+
+.day:focus .day-number::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    border: 0.25em solid #FFBD59;
+    border-radius: 50%;
+}
+
+.day.active-a:focus .day-number::after,
+.day.active-b:focus .day-number::after {
+    width: 100%;
+    height: 100%;
+}
+
+.day.today:focus .day-number::after {
+    width: 102%;
+    height: 102%;
+}
+
+.day:hover span.day-number {
+    color: #FFBD59;
+}
+
+.day:first-child,
+.day:last-child {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.day.range {
+    color: #FFBD59;
+    background-color: #f7e6cc;
+}
+
+.day.range.active-a,
+.day:not(.range)+.day.range.active-b {
+    background-color: transparent;
+    box-shadow: inset -1.5em 0 #f7e6cc;
+}
+
+.day.range.active-b,
+.day.range+.day.range.active-a {
+    background-color: transparent;
+    box-shadow: inset 1.5em 0 #f7e6cc;
+}
+
+.day.range.active-a:first-child,
+.day.range.active-b:first-child {
+    box-shadow: none;
+}
+
+.day.range.active-a:first-child+.day.range,
+.day.range.active-b:first-child+.day.range {
+    box-shadow: -1.5em 0 #f7e6cc;
+}
+
+.day.range.active-a:first-child+.day:not(.range),
+.day.range.active-b:first-child+.day:not(.range) {
+    box-shadow: -4.5em 0 #f7e6cc;
+}
+
+.day.range.active-a:first-child+.day.range.active-b {
+    box-shadow:
+        -1.5em 0 #f7e6cc,
+        inset 1.5em 0 #f7e6cc;
+}
+
+.day-number {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.day.active-a span.day-number,
+.day.active-b span.day-number {
+    color: #fff;
+    background-color: #FFBD59;
+}
+
+.day.prev-mon .day-number,
+.day.next-mon .day-number {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.day.prev-mon[class*="active"] .day-number,
+.day.next-mon[class*="active"] .day-number {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #f8c578;
+}
+
+.day.today span.day-number {
+    color: #fff;
+    border: 0.25em solid transparent;
+    box-shadow: inset 0 0 0 2em #5D626E;
+}
